@@ -18,7 +18,7 @@ class ProfileView: UIView {
     @IBOutlet weak var textUITaxtView: UITextView!
     @IBOutlet weak var cityUILabel: UILabel!
  
-    let nibName = "ProfileView"
+/*    let nibName = "ProfileView"
        var contentView: UIView?
     required init?(coder aDecoder: NSCoder) {
             super.init(coder: aDecoder)
@@ -33,7 +33,7 @@ class ProfileView: UIView {
             let nib = UINib(nibName: nibName, bundle: bundle)
             return nib.instantiate(withOwner: self, options: nil).first as? UIView
         }
- /*
+*/
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.setupView()
@@ -49,8 +49,11 @@ class ProfileView: UIView {
         view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     }
     private func loadViewFromXib() -> UIView {
-        guard let view = Bundle.main.loadNibNamed("ProfileView", owner: nil, options: nil)?.first as? UIView else { return UIView() }
-    return view
-    }*/
+        guard let view = Bundle.main.loadNibNamed("ProfileView", owner: self, options: nil)?.first as? UIView else { return UIView() }
+        
+        return view
+    }
+    
+    
   
 }
